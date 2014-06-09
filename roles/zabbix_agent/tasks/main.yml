@@ -1,0 +1,7 @@
+- name: install zabbix-agent
+  action: apt pkg=zabbix-agent state=latest
+
+- name: Configure zabbix file
+  template: src=zabbix-agent.j2 dest=/etc/zabbix/zabbix_agentd.conf
+  tags: zabbix-agent
+  notify: restart zabbix-agent

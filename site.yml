@@ -1,0 +1,7 @@
+- name: install zabbix_agents
+  hosts: zabbix
+  user: user
+  sudo: yes
+
+  roles:
+    - zabbix_agent
